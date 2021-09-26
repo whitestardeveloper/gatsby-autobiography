@@ -1,0 +1,119 @@
+backend:
+  name: github
+  repo: whitestardeveloper/gatsby-autobiography
+  branch: main
+
+media_folder: src/images
+public_folder: ../
+
+
+collections:
+  - name: autobiography 
+    label: Autobiography 
+    files:
+      - file: src/content/data/data.md
+        label: Data
+        name: data
+        fields: # The fields for each document, usually in front matter
+          - label: Person
+            name: person
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Mail, name: mail, widget: string }
+              - { label: Telephone, name: telephone, widget: string }
+              - { label: Web Adress, name: web_adress, widget: string }
+              - { label: Job, name: job, widget: string }
+              - { label: Company Spell, name: company_spell, widget: string }
+
+          - {
+              label: "Contact Description",
+              name: "contact_description",
+              widget: "string",
+            }
+
+          - label: "Index Page Informations"
+            name: "index_page"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "Index Page Image"
+                name: "image"
+                widget: "image"
+                choose_url: true
+                default: "/images/index-image.jpg"
+                media_library:
+                  config:
+                    multiple: false
+
+              - label: "Image Description Informations"
+                name: "image_desc"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Detail", name: "detail", widget: "string" }
+
+          - label: "Awards"
+            name: "awards"
+            widget: "list"
+            types:
+              - label: "Award"
+                name: "award"
+                widget: "object"
+                summary: "{{fields.branch}}, {{fields.earned}}, {{fields.year}}"
+                collapsed: true
+                fields:
+                  - { label: "Branch", name: "branch", widget: "string" }
+                  - { label: "Earned", name: "earned", widget: "string" }
+                  - {
+                      label: "Year",
+                      name: "year",
+                      widget: "number",
+                      value_type: "int",
+                      min: 1980,
+                      max: 2021,
+                      default: 2021
+                    }
+
+          - label: "About"
+            name: "about"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Biography", name: "biography", widget: "string" }
+              - label: "Education"
+                name: "education"
+                widget: "list"
+                types:
+                  - label: "Graduate"
+                    name: "graduate"
+                    widget: "object"
+                    summary: "{{fields.university}}, {{fields.section}}, {{fields.year}}"
+                    collapsed: true
+                    fields:
+                      - {
+                          label: "University",
+                          name: "university",
+                          widget: "string",
+                        }
+                      - { label: "Section", name: "section", widget: "string" }
+                      - {
+                          label: "Year",
+                          name: "year",
+                          widget: "number",
+                          value_type: "int",
+                          min: 1980,
+                          max: 2021 ,
+                          default: 2021
+                        }
+
+              - label: "People Image"
+                name: "image"
+                widget: "image"
+                choose_url: true
+                default: "/images/people-portre.jpg"
+                media_library:
+                  config:
+                    multiple: false
