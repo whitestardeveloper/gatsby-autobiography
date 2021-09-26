@@ -9,7 +9,7 @@ public_folder: /images
 collections:
   - name: "data" # Used in routes, e.g., /admin/collections/blog
     label: "Otobiography" # Used in the UI
-    file: "data/data.md" # The path to the folder where the documents are stored
+    file: "content/data/data.md" # The path to the folder where the documents are stored
     extension: "md"
     fields: # The fields for each document, usually in front matter
       - label: "Person"
@@ -55,7 +55,7 @@ collections:
       - label: "Awards"
         name: "awards"
         widget: "list"
-        summary: '{{fields.award.branch}}, {{fields.award.earned}}, {{fields.award.year}}'
+        summary: "{{fields.award.branch}}, {{fields.award.earned}}, {{fields.award.year}}"
         field:
           - label: "Award"
             name: "award"
@@ -64,33 +64,53 @@ collections:
             fields:
               - { label: "Branch", name: "branch", widget: "string" }
               - { label: "Earned", name: "earned", widget: "string" }
-              - { label: "Year", name: "year", widget: "number", value_type: 'int', min: 1980, max: {{year}}, default: {{year}}   }
+              - {
+                  label: "Year",
+                  name: "year",
+                  widget: "number",
+                  value_type: "int",
+                  min: 1980,
+                  max: { { year } },
+                  default: { { year } },
+                }
 
       - label: "About"
-            name: "about"
-            widget: "object"
-            collapsed: true
-            fields:
-              - { label: "Biography", name: "biography", widget: "string" }
-              - label: "Education"
-                name: "education"
-                widget: "list"
-                summary: '{{fields.graduate.university}}, {{fields.graduate.section}}, {{fields.graduate.year}}'
-                field:
-                  - label: "Graduate"
-                    name: "graduate"
-                    widget: "object"
-                    collapsed: true
-                    fields:
-                      - { label: "University", name: "university", widget: "string" }
-                      - { label: "Section", name: "section", widget: "string" }
-                      - { label: "Year", name: "year", widget: "number", value_type: 'int', min: 1980, max: {{year}}, default: {{year}}   }
+        name: "about"
+        widget: "object"
+        collapsed: true
+        fields:
+          - { label: "Biography", name: "biography", widget: "string" }
+          - label: "Education"
+            name: "education"
+            widget: "list"
+            summary: "{{fields.graduate.university}}, {{fields.graduate.section}}, {{fields.graduate.year}}"
+            field:
+              - label: "Graduate"
+                name: "graduate"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - {
+                      label: "University",
+                      name: "university",
+                      widget: "string",
+                    }
+                  - { label: "Section", name: "section", widget: "string" }
+                  - {
+                      label: "Year",
+                      name: "year",
+                      widget: "number",
+                      value_type: "int",
+                      min: 1980,
+                      max: { { year } },
+                      default: { { year } },
+                    }
 
-              - label: "People Image"
-                name: "image"
-                widget: "image"
-                choose_url: true
-                default: "/images/people-portre.jpg"
-                media_library:
-                  config:
-                    multiple: false
+          - label: "People Image"
+            name: "image"
+            widget: "image"
+            choose_url: true
+            default: "/images/people-portre.jpg"
+            media_library:
+              config:
+                multiple: false
