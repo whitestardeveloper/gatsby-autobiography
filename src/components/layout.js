@@ -14,11 +14,9 @@ import "../styles/global.css";
 const Layout = ({ name, children }) => {
 
   const isActive = (current) =>
-    current === window.location.pathname.replaceAll("/", "")
+    current === (typeof window !== "undefined" && window.location.pathname.replaceAll("/", ""))
       ? `${navLinkText} ${navLinkTextActive}`
       : navLinkText;
-
-      console.log(window)
 
   return (
     <div className={container}>

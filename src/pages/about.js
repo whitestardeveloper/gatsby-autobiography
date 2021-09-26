@@ -1,7 +1,7 @@
 import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 import Layout from "../components/layout";
-import { graphql } from "graphql";
+import { graphql } from "gatsby";
 import "../styles/global.css";
 
 const AboutPage = ({ data }) => {
