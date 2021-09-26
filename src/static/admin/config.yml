@@ -9,7 +9,7 @@ public_folder: /images
 collections:
   - name: "data" # Used in routes, e.g., /admin/collections/blog
     label: "Otobiography" # Used in the UI
-    file: "content/data/data.md" # The path to the folder where the documents are stored
+    folder: "content/data/" # The path to the folder where the documents are stored
     extension: "md"
     fields: # The fields for each document, usually in front matter
       - label: "Person"

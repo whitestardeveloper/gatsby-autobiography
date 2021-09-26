@@ -22,6 +22,11 @@ const IndexPage = ({ data }) => {
     mail: data.allMarkdownRemark.nodes[0].frontmatter.person.mail,
   };
 
+  const img_desc = data.allMarkdownRemark.nodes[0].frontmatter && {
+    name: data.allMarkdownRemark.nodes[0].frontmatter.index_page.image_desc.name,
+    detail: data.allMarkdownRemark.nodes[0].frontmatter.index_page.image_desc.detail
+  };
+
   return (
     <div style={pageStyles}>
       <Layout name={person.name}>
@@ -50,8 +55,8 @@ const IndexPage = ({ data }) => {
                 flexDirection: "row",
               }}
             >
-              <div style={{ fontWeight: "bold" }}>{"Image Name"}</div>&nbsp;
-              <div style={{ fontStyle: "italic" }}>{"Image/Detail"}</div>
+              <div style={{ fontWeight: "bold" }}>{img_desc.name}</div>&nbsp;
+              <div style={{ fontStyle: "italic" }}>{img_desc.detail}</div>
             </div>
           </div>
         </div>
