@@ -3,7 +3,7 @@ backend:
   repo: whitestardeveloper/gatsby-autobiography
   branch: main
 
-media_folder: "src/images"
+media_folder: src/images
 public_folder: ../
 
 collections:
