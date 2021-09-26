@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-index-js",
+    "path": "/",
+    "result": {"data":{"allMarkdownRemark":{"nodes":[{"frontmatter":{"contact_description":"Please contact for our postal address!","index_page":{"image_desc":{"detail":"Costa Rica / Dominical","name":"Master House"}},"person":{"job":"Architect","mail":"nurettinsatir@gmail.com","name":"Nurettin Şatır","telephone":"+90 (541) 905 84 34","web_adress":"www.nurettinsatir.com","company_spell":"NŞA"}}}]}},"pageContext":{}},
+    "staticQueryHashes": []}
