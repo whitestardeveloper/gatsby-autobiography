@@ -2,7 +2,7 @@
 person:
   name: "Nurettin Şatır"
   mail: "nurettinsatir@gmail.com"
-  telefon: "+90 (541) 905 84 34"
+  telephone: "+90 (541) 905 84 34"
   web_adress: "www.nurettinsatir.com"
   job: "Architect"
   company_spell: "NŞA"

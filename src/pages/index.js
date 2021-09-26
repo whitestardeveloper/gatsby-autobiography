@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => {
     data.allMarkdownRemark.nodes[0].frontmatter.contact_description;
   const person = data.allMarkdownRemark.nodes[0].frontmatter && {
     name: data.allMarkdownRemark.nodes[0].frontmatter.person.name,
-    telefon: data.allMarkdownRemark.nodes[0].frontmatter.person.telefon,
+    telephone: data.allMarkdownRemark.nodes[0].frontmatter.person.telephone,
     mail: data.allMarkdownRemark.nodes[0].frontmatter.person.mail,
   };
 
@@ -67,7 +67,7 @@ const IndexPage = ({ data }) => {
         >
           <span>{contact_description}</span>
           <span>m: {person.mail}</span>
-          <span>t: {person.telefon}</span>
+          <span>t: {person.telephone}</span>
         </div>
       </Layout>
     </div>
@@ -90,7 +90,7 @@ export const pageQuery = graphql`
             job
             mail
             name
-            telefon
+            telephone
             web_adress
             company_spell
           }

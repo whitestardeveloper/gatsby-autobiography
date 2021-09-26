@@ -10,7 +10,7 @@ const ContactPage = ({ data }) => {
     data.allMarkdownRemark.nodes[0].frontmatter.contact_description;
   const person = data.allMarkdownRemark.nodes[0].frontmatter && {
     name: data.allMarkdownRemark.nodes[0].frontmatter.person.name,
-    telefon: data.allMarkdownRemark.nodes[0].frontmatter.person.telefon,
+    telephone: data.allMarkdownRemark.nodes[0].frontmatter.person.telephone,
     mail: data.allMarkdownRemark.nodes[0].frontmatter.person.mail,
     web_adress: data.allMarkdownRemark.nodes[0].frontmatter.person.web_adress,
     company_spell: data.allMarkdownRemark.nodes[0].frontmatter.person.company_spell,
@@ -33,7 +33,7 @@ const ContactPage = ({ data }) => {
         <div>{person.company_spell}</div>
         <span style={{ marginTop: 24 }}>m: {person.mail}</span>
         <span style={{ marginTop: 16 }}>w: {person.web_adress}</span>
-        <span style={{ marginTop: 16 }}>t: {person.telefon}</span>
+        <span style={{ marginTop: 16 }}>t: {person.telephone}</span>
       </div>
       <div style={{ width: "100%", textAlign: "center", marginBottom: 80 }}>
         {contact_description}
@@ -58,7 +58,7 @@ export const pageQuery = graphql`
             job
             mail
             name
-            telefon
+            telephone
             web_adress
             company_spell
           }
