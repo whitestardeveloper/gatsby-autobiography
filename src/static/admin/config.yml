@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: whitestardeveloper/gatsby-autobiography
   branch: main
 
@@ -11,22 +11,21 @@ collections:
     label: Data # Used in the UI
     folder: src/content/data # The path to the folder where the documents are stored
     extension: md
-    format: json
     slug: "{{fields.name}}_{{year}}-{{month}}-{{day}}"
     identifier-field: slug
     create: false
     fields: # The fields for each document, usually in front matter
-      - label: "Person"
-        name: "person"
-        widget: "object"
+      - label: Person
+        name: person
+        widget: object
         collapsed: true
         fields:
-          - { label: "Name", name: "name", widget: "string" }
-          - { label: "Mail", name: "mail", widget: "string" }
-          - { label: "Telephone", name: "telephone", widget: "string" }
-          - { label: "Web Adress", name: "mail", widget: "string" }
-          - { label: "Job", name: "job", widget: "string" }
-          - { label: "Company Spell", name: "company_spell", widget: "string" }
+          - { label: Name, name: name, widget: string }
+          - { label: Mail, name: mail, widget: string }
+          - { label: Telephone, name: telephone, widget: string }
+          - { label: Web Adress, name: mail, widget: string }
+          - { label: Job, name: job, widget: string }
+          - { label: Company Spell, name: company_spell, widget: string }
 
       # - {
       #     label: "Contact Description",
