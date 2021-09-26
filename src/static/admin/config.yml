@@ -9,7 +9,7 @@ public_folder: ../
 collections:
   - name: data # Used in routes, e.g., /admin/collections/blog
     label: Data # Used in the UI
-    folder: src/content/data/ # The path to the folder where the documents are stored
+    folder: src/content/data # The path to the folder where the documents are stored
     extension: md
     format: json
     slug: "{{fields.name}}_{{year}}-{{month}}-{{day}}"
