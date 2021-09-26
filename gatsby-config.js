@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "gatsby-autobiography",
+    siteUrl: "https://www.nurettinsatir.com",
+    title: "Nurettin Şatır Arthitect",
   },
   plugins: [
     "gatsby-plugin-netlify-cms",
@@ -28,5 +28,13 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data/`,
+      },
+    },
+    `gatsby-transformer-remark`,
   ],
 };
