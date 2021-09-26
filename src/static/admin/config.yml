@@ -3,13 +3,13 @@ backend:
   repo: whitestardeveloper/gatsby-autobiography
   branch: main
 
-media_folder: /images
+media_folder: static/images
 public_folder: /images
 identifier_field: name
 collections:
   - name: "data" # Used in routes, e.g., /admin/collections/blog
     label: "Data" # Used in the UI
-    folder: "content/data/" # The path to the folder where the documents are stored
+    folder: "content/data" # The path to the folder where the documents are stored
     create: true
     fields: # The fields for each document, usually in front matter
       - label: "Person"
