@@ -4,12 +4,6 @@ import Layout from "../components/layout";
 import "../styles/global.css";
 import { graphql } from "gatsby";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  fontFamily:
-    "FuturaBT-Light,FuturaBT-Medium,FuturaBT-Light,AdobeInvisFont,MyriadPro-Regular",
-};
 
 // markup
 const IndexPage = ({ data }) => {
@@ -23,29 +17,38 @@ const IndexPage = ({ data }) => {
   };
 
   const img_desc = data.allMarkdownRemark.nodes[0].frontmatter && {
-    name: data.allMarkdownRemark.nodes[0].frontmatter.index_page.image_desc.name,
-    detail: data.allMarkdownRemark.nodes[0].frontmatter.index_page.image_desc.detail
+    name: data.allMarkdownRemark.nodes[0].frontmatter.index_page.image_desc
+      .name,
+    detail:
+      data.allMarkdownRemark.nodes[0].frontmatter.index_page.image_desc.detail,
   };
 
   return (
-    <div style={pageStyles}>
-      <Layout name={person.name}>
+    <Layout name={person.name}>
+      <div
+       style={{
+        color: "#232129",
+        height: "calc(100% - 20px)",
+      }}
+      >
         <div
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            marginTop: 67,
+            marginTop: 20,
+            height: "calc(100% - 100px)",
+          
           }}
         >
-          <div>
+          <div> 
             <StaticImage
               src="../images/index-image.jpg"
               alt="place image"
-              layout="fixed"
+              layout="constrained"
               width={1353}
-              height={761}
+              height={690}
             />
             <div
               style={{
@@ -66,7 +69,8 @@ const IndexPage = ({ data }) => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            marginTop: 24,
+            marginTop: 18,
+            marginBottom: 20,
             fontSize: 16,
           }}
         >
@@ -74,8 +78,8 @@ const IndexPage = ({ data }) => {
           <span>m: {person.mail}</span>
           <span>t: {person.telephone}</span>
         </div>
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   );
 };
 

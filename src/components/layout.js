@@ -22,9 +22,9 @@ const Layout = ({ name, children }) => {
     <div className={container}>
       <div className={header}>
         <span
-          style={{ marginRight: "889px", whiteSpace: "nowrap", fontSize: 20 }}
+          style={{ marginRight: "925px", whiteSpace: "nowrap", fontSize: 20 }}
         >
-          {name}
+          <Link style={{  color: 'inherit',textDecoration: 'none'}} to="/">{name}</Link>
         </span>
         <div>
           <div className={navLinks}>
