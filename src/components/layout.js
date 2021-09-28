@@ -18,8 +18,8 @@ const Layout = ({ name, children }) => {
       ? `${navLinkText} ${navLinkTextActive}`
       : navLinkText;
 
-    console.log(window.location.pathname.slice(1).replace('/',''))
-    
+      typeof window !== "undefined" && console.log(window.location.pathname.slice(1).replace('/',''))
+
   return (
     <div className={container}>
       <div className={header}>
