@@ -73,8 +73,8 @@ collections:
                       widget: "number",
                       value_type: "int",
                       min: 1980,
-                      max: {{year}},
-                      default: {{year}}
+                      max: 2021,
+                      default: 2021
                     }
 
           - label: "About"
@@ -105,8 +105,8 @@ collections:
                           widget: "number",
                           value_type: "int",
                           min: 1980,
-                          max: {{year}} ,
-                          default: {{year}}
+                          max: 2021 ,
+                          default: 2021
                         }
 
               - label: "People Image"
